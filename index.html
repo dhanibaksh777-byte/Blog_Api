@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogAPI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Auth Section -->
+    <div id="auth-section" class="container">
+        <h1>📝 Blog API</h1>
+        <div class="tabs">
+            <button onclick="showTab('register')" class="tab-btn active" id="reg-tab">Register</button>
+            <button onclick="showTab('login')" class="tab-btn" id="log-tab">Login</button>
+        </div>
+
+        <div id="register" class="form-box">
+            <h2>Create Account</h2>
+            <input type="text" id="reg-username" placeholder="Username">
+            <input type="password" id="reg-password" placeholder="Password">
+            <button onclick="register()">Register</button>
+            <p id="reg-msg"></p>
+        </div>
+
+        <div id="login" class="form-box" style="display:none">
+            <h2>Welcome Back!</h2>
+            <input type="text" id="log-username" placeholder="Username">
+            <input type="password" id="log-password" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <p id="log-msg"></p>
+        </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div id="dashboard-section" style="display:none">
+        <nav>
+            <h1>📝 BlogAPI</h1>
+            <div>
+                <span id="nav-username"></span>
+                <button onclick="logout()" class="logout-btn">Logout</button>
+            </div>
+        </nav>
+
+        <div class="dashboard">
+            <!-- Create Post -->
+            <div class="create-post">
+                <h2>New Post</h2>
+                <input type="text" id="post-title" placeholder="Title">
+                <textarea id="post-content" placeholder="Content..."></textarea>
+                <button onclick="createPost()">Publish Post</button>
+                <p id="post-msg"></p>
+            </div>
+
+            <!-- Posts List -->
+            <div class="posts-section">
+                <h2>All Posts</h2>
+                <div id="posts-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
