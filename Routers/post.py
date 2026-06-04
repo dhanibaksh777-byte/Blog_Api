@@ -68,7 +68,7 @@ def delete_post(token: str, post_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Post not found!")
     
     if post.owner_id != user_id:         
-        raise HTTPException(status_code=403, detail="Ye tera post nahi hai!")
+        raise HTTPException(status_code=403, detail="this is not your post!")
     
     db.delete(post)                       
     db.commit()
